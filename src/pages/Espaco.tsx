@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Home, TreePine, Utensils, Gamepad2, BookOpen, Shield } from "lucide-react";
+import espacoBg from "@/assets/espaco-bg.jpg";
 
 const Espaco = () => {
   const espacos = [
@@ -89,8 +90,13 @@ const Espaco = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-primary-light to-accent-light">
-        <div className="container mx-auto px-4 text-center">
+      <section className="relative py-20 bg-gradient-to-r from-primary-light to-accent-light overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          style={{ backgroundImage: `url(${espacoBg})` }}
+        >
+        </div>
+        <div className="relative z-10 container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
             Nosso Espaço
           </h1>

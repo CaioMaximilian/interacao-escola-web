@@ -1,5 +1,10 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { BookOpen, Users, Heart, Lightbulb, Puzzle, Music } from "lucide-react";
+import propostaBg from "@/assets/proposta-bg.jpg";
+import desenvolvimentoCognitivo from "@/assets/desenvolvimento-cognitivo.jpg";
+import desenvolvimentoSocial from "@/assets/desenvolvimento-social.jpg";
+import desenvolvimentoEmocional from "@/assets/desenvolvimento-emocional.jpg";
+import desenvolvimentoMotor from "@/assets/desenvolvimento-motor.jpg";
 
 const Proposta = () => {
   const metodologias = [
@@ -29,30 +34,39 @@ const Proposta = () => {
     {
       area: "Desenvolvimento Cognitivo",
       descricao: "Estimulamos o pensamento crítico, a curiosidade e a capacidade de resolver problemas através de atividades desafiadoras e investigativas.",
-      atividades: ["Jogos de lógica", "Experiências científicas", "Contação de histórias", "Atividades matemáticas lúdicas"]
+      atividades: ["Jogos de lógica", "Experiências científicas", "Contação de histórias", "Atividades matemáticas lúdicas"],
+      imagem: desenvolvimentoCognitivo
     },
     {
       area: "Desenvolvimento Social",
       descricao: "Promovemos a socialização saudável, o respeito às diferenças e a construção de vínculos afetivos positivos.",
-      atividades: ["Atividades em grupo", "Rodas de conversa", "Projetos colaborativos", "Resolução de conflitos"]
+      atividades: ["Atividades em grupo", "Rodas de conversa", "Projetos colaborativos", "Resolução de conflitos"],
+      imagem: desenvolvimentoSocial
     },
     {
       area: "Desenvolvimento Emocional",
       descricao: "Auxiliamos as crianças a reconhecer, expressar e regular suas emoções de forma adequada e saudável.",
-      atividades: ["Círculo de sentimentos", "Yoga infantil", "Meditação para crianças", "Arte terapia"]
+      atividades: ["Círculo de sentimentos", "Yoga infantil", "Meditação para crianças", "Arte terapia"],
+      imagem: desenvolvimentoEmocional
     },
     {
       area: "Desenvolvimento Motor",
       descricao: "Oferecemos experiências variadas que estimulam tanto a motricidade fina quanto a grossa de forma integrada.",
-      atividades: ["Educação física", "Dança", "Atividades manuais", "Jogos motores"]
+      atividades: ["Educação física", "Dança", "Atividades manuais", "Jogos motores"],
+      imagem: desenvolvimentoMotor
     }
   ];
 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-primary-light to-accent-light">
-        <div className="container mx-auto px-4 text-center">
+      <section className="relative py-20 bg-gradient-to-r from-primary-light to-accent-light overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          style={{ backgroundImage: `url(${propostaBg})` }}
+        >
+        </div>
+        <div className="relative z-10 container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
             Proposta Pedagógica
           </h1>
@@ -146,10 +160,17 @@ const Proposta = () => {
             {desenvolvimentos.map((area, index) => (
               <Card key={index} className="border-0 shadow-md">
                 <CardContent className="p-8">
-                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                  <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
                     <div className="lg:col-span-2">
                       <h3 className="text-2xl font-bold mb-4 text-primary">{area.area}</h3>
                       <p className="text-foreground/80 leading-relaxed mb-6">{area.descricao}</p>
+                    </div>
+                    <div className="flex justify-center">
+                      <img 
+                        src={area.imagem} 
+                        alt={area.area}
+                        className="w-full h-48 object-cover rounded-lg shadow-md"
+                      />
                     </div>
                     <div>
                       <h4 className="text-lg font-semibold mb-4 text-accent">Atividades Principais:</h4>

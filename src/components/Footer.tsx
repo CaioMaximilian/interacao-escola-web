@@ -58,6 +58,9 @@ const Footer = () => {
               <Link to="/matriculas" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                 Matrículas
               </Link>
+              <Link to="/material-escolar" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                Lista de Material
+              </Link>
             </nav>
           </div>
 

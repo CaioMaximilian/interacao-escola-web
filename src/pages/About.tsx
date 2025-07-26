@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, Target, Eye, Heart } from "lucide-react";
+import sobreBg from "@/assets/sobre-bg.jpg";
 
 const About = () => {
   const values = [
@@ -51,8 +52,13 @@ const About = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-primary-light to-accent-light">
-        <div className="container mx-auto px-4 text-center">
+      <section className="relative py-20 bg-gradient-to-r from-primary-light to-accent-light overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          style={{ backgroundImage: `url(${sobreBg})` }}
+        >
+        </div>
+        <div className="relative z-10 container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
             Sobre a Escola Interação
           </h1>

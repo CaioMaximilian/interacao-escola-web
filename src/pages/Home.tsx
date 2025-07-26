@@ -150,12 +150,12 @@ const Home = () => {
       </section>
 
       {/* CTA Final */}
-      <section className="py-16 bg-primary text-primary-foreground">
+      <section className="py-16 bg-school-light">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">
             Venha Conhecer Nossa Escola!
           </h2>
-          <p className="text-xl mb-8 opacity-90">
+          <p className="text-xl mb-8 text-foreground/80">
             Agende uma visita e veja de perto o ambiente acolhedor onde seu filho irá crescer e aprender.
           </p>
           <Button asChild size="lg" className="bg-accent hover:bg-accent/90">
